@@ -61,16 +61,10 @@ def download_data(
         # download patchs
         for filename_patch in filenames_patchs:
             patch_cmd = [
-                # "curl",
-                # f"https://minio.lab.sspcloud.fr/projet-funathon/2026/project3/data/images/{nuts_3}/{year}/{filename_patch}",  # noqa
-                # "--create-dirs", 
-                # "--output",
-                # f"data/data-preprocessed/patchs/{nuts_3}/{year}/{filename_patch}",
-                "wget",
-                "-nc",
-                "-O",
-                f"data/data-preprocessed/patchs/{nuts_3}/{year}/{filename_patch}",
-                f"https://minio.lab.sspcloud.fr/projet-funathon/2026/project3/data/images/{nuts_3}/{year}/{filename_patch}",  # noqa
+                "mc",
+                "cp",
+                f"public/projet-funathon/2026/project3/data/images/{nuts_3}/{year}/{filename_patch}",  # noqa
+                f"data/data-preprocessed/patchs/{nuts_3}/{year}/",
             ]
             subprocess.run(patch_cmd, check=True, stdout=devnull, stderr=devnull)
 
