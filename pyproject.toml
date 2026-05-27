@@ -5,6 +5,7 @@ description = "Satellite image segmentation with deep learning"
 readme = "README.md"
 requires-python = "==3.13.*"
 dependencies = [
+    "accelerate>=1.13.0",
     "albumentations>=2.0.8",
     "astrovision>=0.14.7",
     "cloudpickle>=3.1.1",
